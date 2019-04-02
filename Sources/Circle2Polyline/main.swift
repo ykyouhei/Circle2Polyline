@@ -36,7 +36,7 @@ let vertex = parser.add(
     usage: "optional(default: 360): 円を描画する際の頂点数"
 )
 
-private func main() {
+private func main() -> Int32 {
     do {
         let polyline: String
 
@@ -47,9 +47,11 @@ private func main() {
         }
         
         stdoutTc.write(polyline, inColor: .green, bold: true)
+        return 0
     } catch let e {
         stderrTc.write("\(e)", inColor: .red, bold: false)
         parser.printUsage(on: stderrStream)
+        return 1
     }
 }
 
@@ -110,4 +112,4 @@ private func polylineFromArguments() throws -> String {
     return Circle(lat: lat, lng: lng, radius: r).generatePolyline(numberOfVertex: numberOfVertex)
 }
 
-main()
+exit(main())
