@@ -3,7 +3,7 @@ PREFIX?=/usr/local
 TEMPORARY_FOLDER=./tmp_portable_circle2polyline
 
 build:
-	swift build --disable-sandbox -c release
+	swift build  -Xswiftc -static-stdlib --disable-sandbox -c release
 
 test:
 	swift test
