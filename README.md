@@ -13,3 +13,5 @@ OPTIONS:
   --vertex, -v       optional(default: 360): 円を描画する際の頂点数
   --help             Display available options
 ```
+
+## 
